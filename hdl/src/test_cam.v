@@ -19,18 +19,21 @@
 //
 //////////////////////////////////////////////////////////////////////////////////
 module test_cam(
-    input wire clk,             // board clock: 32 MHz 
+    input wire clk,           // board clock: 32 MHz 
     input wire rst,         	// reset button
 
 	// VGA input/output  
-    output wire VGA_Hsync_n,     // horizontal sync output
-    output wire VGA_Vsync_n,     // vertical sync output
-    output wire [3:0] VGA_R,  // 4-bit VGA red output
+    output wire VGA_Hsync_n,  // horizontal sync output
+    output wire VGA_Vsync_n,  // vertical sync output
+    output wire [3:0] VGA_R,	// 4-bit VGA red output
     output wire [3:0] VGA_G,  // 4-bit VGA green output
-    output wire [3:0] VGA_B   // 4-bit VGA blue output
+    output wire [3:0] VGA_B,  // 4-bit VGA blue output
 	
 	//CAMARA input/output
 	
+	output wire CAM_xclk,		// System  clock imput
+	output wire CAM_pwdn,		// power down mode 
+	output wire CAM_reset		// clear all registers of cam
 	// colocar aqui las entras  y salidas de la camara 
 
 );
@@ -77,6 +80,17 @@ assign VGA_G = {data_RGB332[4:2],1'b0};
 assign VGA_B = {data_RGB332[1:0],2'b00};
 
 
+
+/* ****************************************************************************
+Asignación de las señales de control xclk pwdn y reset de la camara 
+**************************************************************************** */
+
+assign CAM_xclk=  clk24M;
+assign CAM_pwdn=  0;			// power down mode 
+assign CAM_reset=  0;
+
+
+
 /* ****************************************************************************
   Este bloque se debe modificar según sea le caso. El ejemplo esta dado para
   fpga Spartan6 lx9 a 32MHz.
@@ -115,7 +129,7 @@ buffer_ram_dp #( AW,DW)
 /* ****************************************************************************
 VGA_Driver640x480
 **************************************************************************** */
-VGA_Driver640x480 VGA
+VGA_Driver640x480 VGA640x480
 (
 	.rst(rst),
 	.clk(clk25M), 				// 25MHz  para 60 hz de 640x480
