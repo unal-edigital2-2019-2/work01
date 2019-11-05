@@ -41,11 +41,11 @@ Para este paquete de trabajo se debe contar con:
 
 Como se ha explicado en clase, este paquete de trabajo debe desarrollar el siguiente bloque funcional:
 
-![CAPTURADATOS](./figs/cajacapturadatos.png)
+![CAPTURADATOS](./docs/figs/cajacapturadatos.png)
 
 Para lo cual, la captura de datos debe ser acorde al funcionamiento de la cámara. para ello debe analizar la siguiente gráfica:
 
-![CAPTURADATOS](./figs/cajacapturadatos2.PNG)
+![CAPTURADATOS](./docs/figs/cajacapturadatos2.PNG)
 
 
 1. Diseñar el sistema digital de captura de los pixeles de la cámara. No es necesario incluir las señales de control  Xclk, pwdn y reset, estas están descritas en el top del proyecto.
