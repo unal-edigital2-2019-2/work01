@@ -6,7 +6,7 @@
 El sistema de captura de datos de la cámara debe adquirir la información de los pixeles y almacenarlos en el buffer de memoria, analizado en el trabajo anterior.
 Se propone el siguiente esquema de trabajo, donde el estudiante puede testear el funcionamiento del driver de la cámara diseñado
 
-![DIAGRAMA](./figs/test_cam.png)
+![DIAGRAMA](./docs/figs/test_cam.png)
 
 
 En este paquete de trabajo los estudiantes deben, en primera instancia, diseñar e implementar la captura datos de la cámara según la configuración seleccionada en el WP01 y, adaptar los datos para que se almacene en memoria el pixel con el formato RGB332.
@@ -14,7 +14,7 @@ En este paquete de trabajo los estudiantes deben, en primera instancia, diseñar
 Luego de tener el diseño "captura_datos_downsampler" deben instanciar el bloque HDL en el test_cam.v. y probar la funcionalidad del diseño. Para ello, debe analizar el proyecto propuesto **test_cam.xise** junto con el siguiente figura:
 
 
-![DIAGRAMA](./figs/test_cam2.png)
+![DIAGRAMA](./docs/figs/test_cam2.png)
 
 Como se observa en la figura anterior, el bloque en rojo y las señales en amarillo indican que el grupo de trabajo deben adicionarla dicha información al proyecto **test_cam.xise** para completar el funcionamiento.
 
